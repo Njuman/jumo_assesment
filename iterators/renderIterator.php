@@ -1,19 +1,38 @@
 <?php 
 
 /**
-* 
-*/
+ * This class contains iterate functions thats used to go through Grouped array object
+ */
 class renderIterator extends reflectorAccessor {
 
+    /**
+     * The response
+     * Single dimensional array that has been processed as result set
+     * @var array
+     */
 	private $response;
 
+    /**
+     * The response
+     * Array of elements that contains fields that which will be used for filtering the Array
+     * @var array
+     */
 	private $conditions;
-
+    /**
+     * Set conditions value
+     * @param string $conditions
+     * @return renderIterator
+     */
 	public function setCondition($conditions) {
 		$this->conditions = $conditions;
 		return $this;
 	}
-	
+	/**
+     * Set ActionDate value
+     * @param array $items
+     * @param int $count
+     * @return Array
+     */
 	public function iterate(array &$items, &$count = 1) {
 		
 		if (!isset($this->conditions)) {

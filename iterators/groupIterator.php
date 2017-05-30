@@ -1,7 +1,16 @@
 <?php
 
+/**
+ * This class contains iterate functions that creates grouped object and implements IteratorInterface
+ */
 class groupIterator implements IteratorInterface{
 
+	/**
+     * iterator function used when creating aggregated array
+     * @param array $array
+     * @param array $key
+     * @return Array
+     */
    public function iterate(array &$array, $key) {
 		$_key = (is_array($key)) ? $key[0] : $key;
 
