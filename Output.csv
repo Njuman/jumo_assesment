@@ -1,0 +1,8 @@
+Network,Product,Date,Count,Sum
+"'Network 1'","'Loan Product 1'",March,1000,1
+"'Network 1'","'Loan Product 2'",March,5182,2
+"'Network 1'","'Loan Product 2'",April,1801,1
+"'Network 2'","'Loan Product 1'",March,1122,1
+"'Network 2'","'Loan Product 1'",April,5671,1
+"'Network 2'","'Loan Product 3'",April,1747,1
+"'Network 3'","'Loan Product 3'",April,1928,1
