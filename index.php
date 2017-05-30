@@ -20,7 +20,12 @@ while ($row = fgetcsv($file)) {
         continue;
     }
 
-    $row[2] = date("F", strtotime(str_replace("'", "", $row[2])));
+    // clean field removing unwanted characters
+    foreach ($row as $key => $field) {
+        $row[$key] = trim(str_replace("'", "", $field));
+    }
+
+    $row[2] = date("F", strtotime($row[2]));
 
     $loans[] = array_combine($header, $row);
 }

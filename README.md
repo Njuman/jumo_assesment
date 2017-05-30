@@ -1,4 +1,4 @@
-# jumo_assesment
+# jumo_assessment
 
 # This is just a simple example of the aggregate library based on PHP.
 
