@@ -1,15 +1,16 @@
-<?php 
+<?php
 
 /**
  * Iterator Interface
  */
-interface IteratorInterface {
+interface IteratorInterface
+{
 
-	/**
+    /**
      * Invoke the resolved callable.
      * @param array $items
      * @param array $key
      * @return callable
      */
-	public function iterate(array &$items, $key);
+    public function iterate(array &$items, $key);
 }

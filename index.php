@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 include 'abstracts/reflectorAccessor.php';
 include 'interfaces/iteratorInterface.php';
@@ -35,18 +35,18 @@ $renderIterator = new renderIterator;
 $sumIterator = new sumIterator;
 $countIterator = new countIterator;
 
-$aggregate = new Aggregate($loans, $groupIterator, $sumIterator, $countIterator,$renderIterator);
+$aggregate = new Aggregate($loans, $groupIterator, $sumIterator, $countIterator, $renderIterator);
 
-$aggregate_loans = $aggregate->groupBy(array('Network','Product','Date'))
-							 ->sum('Amount')
-							 ->count()
-							 ->render();
+$aggregate_loans = $aggregate->groupBy(array('Network', 'Product', 'Date'))
+    ->sum('Amount')
+    ->count()
+    ->render();
 
 $filename = 'Output';
 
-$fp = fopen($filename.'.csv', 'w');
+$fp = fopen($filename . '.csv', 'w');
 
-$filepath = $_SERVER["DOCUMENT_ROOT"] .'\\'. $filename.'.csv';
+$filepath = $_SERVER["DOCUMENT_ROOT"] . '\\' . $filename . '.csv';
 
 foreach ($aggregate_loans as $fields) {
     fputcsv($fp, $fields);
@@ -54,5 +54,5 @@ foreach ($aggregate_loans as $fields) {
 
 header('Content-Type: application/octet-stream');
 header('Content-Disposition: attachment; filename="' . $filename . '.csv"');
-header('Content-Length: ' . filesize($filepath)); 
+header('Content-Length: ' . filesize($filepath));
 echo readfile($filepath);
